@@ -3,7 +3,7 @@ require('dotenv').config();
 const { OpenAI } = require("langchain/llms/openai");
 
 const llm = new OpenAI({
-  openAIApiKey: process.env.OPENAI_API_KEY,
+  // openAIApiKey: process.env.OPENAI_API_KEY,
   temperature: 0.9,
 });
 
