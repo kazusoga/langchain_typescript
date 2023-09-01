@@ -9,6 +9,7 @@ async function main() {
   const result = await llm.predict(
     "カラフルな靴下を作る会社の社名として、何がいいだろうか？"
   );
+  console.log(result);
 }
 
 main();
