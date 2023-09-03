@@ -2,6 +2,7 @@ require("dotenv").config();
 const { OpenAI } = require("langchain/llms/openai");
 
 const llm = new OpenAI({
+  modelName: "gpt-3.5-turbo",
   temperature: 0.9,
 });
 
