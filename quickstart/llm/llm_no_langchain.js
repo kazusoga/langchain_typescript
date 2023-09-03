@@ -14,6 +14,7 @@ async function main() {
       },
     ],
   });
+  console.log(completion);
 
   const result = completion.choices[0].message.content;
   console.log(result);
