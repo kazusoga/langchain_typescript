@@ -3,20 +3,33 @@ const { OpenAI } = require("langchain/llms/openai");
 const { LLMChain } = require("langchain/chains");
 const { PromptTemplate } = require("langchain/prompts");
 
-const llm = new OpenAI({});
-const prompt = PromptTemplate.fromTemplate(
-  "What is a good name for a company that makes {product}?"
-);
-
-const chain = new LLMChain({
-  llm,
-  prompt,
+const llm = new OpenAI({
+  modelName: "gpt-3.5-turbo",
+  temperature: 0.9,
 });
+const prompt = PromptTemplate.fromTemplate(
+  "{product}を作る会社の社名として、何がいいだろうか？"
+);
 
 // Run is a convenience method for chains with prompts that require one input and one output.
 async function runChain() {
-  const result = await chain.run("colorful socks");
+  const chain = new LLMChain({
+    llm,
+    prompt,
+  });
+  const result = await chain.run("カラフルな靴下");
   console.log(result);
 }
 
 runChain();
+
+// 以下と同じ
+// async function main() {
+//   const formattedPrompt = await prompt.format({
+//     product: "カラフルな靴下",
+//   });
+//   const result = await llm.predict(formattedPrompt);
+//   console.log(result);
+// }
+
+// main();

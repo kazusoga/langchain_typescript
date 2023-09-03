@@ -9,7 +9,7 @@ const {
 } = require("langchain/prompts");
 
 const template =
-  "You are a helpful assistant that translates {input_language} to {output_language}.";
+  "あなたは{input_language}を{output_language}に翻訳する親切なアシスタントです。";
 const systemMessagePrompt = SystemMessagePromptTemplate.fromTemplate(template);
 const humanTemplate = "{text}";
 const humanMessagePrompt =
@@ -21,21 +21,35 @@ const chatPrompt = ChatPromptTemplate.fromPromptMessages([
 ]);
 
 const chat = new ChatOpenAI({
+  modelName: "gpt-3.5-turbo",
   temperature: 0,
 });
 
-const chain = new LLMChain({
-  llm: chat,
-  prompt: chatPrompt,
-});
+async function runChain() {
+  const chain = new LLMChain({
+    llm: chat,
+    prompt: chatPrompt,
+  });
 
-async function main() {
   const result = await chain.call({
-    input_language: "English",
-    output_language: "French",
-    text: "I love programming",
+    input_language: "日本語",
+    output_language: "英語",
+    text: "私はプログラミングが大好きです。",
   });
   console.log(result);
 }
 
-main();
+runChain();
+
+// 以下と同じ
+// async function main() {
+//   const formattedPrompt = await chatPrompt.formatMessages({
+//     input_language: "日本語",
+//     output_language: "英語",
+//     text: "私はプログラミングが大好きです。",
+//   });
+//   const result = await chat.predict(formattedPrompt);
+//   console.log(result);
+// }
+
+// main();
