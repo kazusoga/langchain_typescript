@@ -7,6 +7,7 @@ const {
 } = require("langchain/schema");
 
 const chat = new ChatOpenAI({
+  modelName: "gpt-3.5-turbo",
   temperature: 0,
 });
 
