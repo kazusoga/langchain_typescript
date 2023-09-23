@@ -1,8 +1,9 @@
-require("dotenv").config();
-const { initializeAgentExecutorWithOptions } = require("langchain/agents");
-const { OpenAI } = require("langchain/llms/openai");
-const { SerpAPI } = require("langchain/tools");
-const { Calculator } = require("langchain/tools/calculator");
+import dotenv from "dotenv";
+dotenv.config();
+import { OpenAI } from "openai-api";
+import SerpAPI from "google-search-results-nodejs";
+import Calculator from "mathjs";
+import { initializeAgentExecutorWithOptions } from "@langchao/llms-agent";
 
 const model = new OpenAI({
   modelName: "gpt-3.5-turbo",

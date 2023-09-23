@@ -1,10 +1,8 @@
-require("dotenv").config();
-const { ChatOpenAI } = require("langchain/chat_models/openai");
-const {
-  HumanMessage,
-  ChatMessage,
-  SystemMessage,
-} = require("langchain/schema");
+import dotenv from "dotenv";
+import { ChatOpenAI } from "langchain/chat_models/openai";
+import { HumanMessage } from "langchain/schema";
+
+dotenv.config();
 
 const chat = new ChatOpenAI({
   modelName: "gpt-3.5-turbo",

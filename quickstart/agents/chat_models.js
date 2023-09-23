@@ -1,8 +1,9 @@
-require("dotenv").config();
-const { initializeAgentExecutorWithOptions } = require("langchain/agents");
-const { ChatOpenAI } = require("langchain/chat_models/openai");
-const { SerpAPI } = require("langchain/tools");
-const { Calculator } = require("langchain/tools/calculator");
+import dotenv from "dotenv";
+dotenv.config();
+import { initializeAgentExecutorWithOptions } from "langchain/agents";
+import { ChatOpenAI } from "langchain/chat_models/openai";
+import { SerpAPI } from "langchain/tools";
+import { Calculator } from "langchain/tools/calculator";
 
 async function main() {
   const executor = await initializeAgentExecutorWithOptions(

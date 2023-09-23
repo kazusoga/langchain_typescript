@@ -1,14 +1,16 @@
-require("dotenv").config();
-const { OpenAI } = require("langchain/llms/openai");
-const { LLMChain } = require("langchain/chains");
-const { PromptTemplate } = require("langchain/prompts");
+import dotenv from "dotenv";
+import { OpenAI } from "langchain/llms/openai";
+import { LLMChain } from "langchain/chains";
+import { PromptTemplate } from "langchain/prompts";
+
+dotenv.config();
 
 const llm = new OpenAI({
   modelName: "gpt-3.5-turbo",
   temperature: 0.9,
 });
 const prompt = PromptTemplate.fromTemplate(
-  "{product}を作る会社の社名として、何がいいだろうか？"
+  "{product}を作る会社名として、何がいいだろうか？"
 );
 
 // Run is a convenience method for chains with prompts that require one input and one output.

@@ -1,13 +1,15 @@
-require("dotenv").config();
-const { ConversationChain } = require("langchain/chains");
-const { ChatOpenAI } = require("langchain/chat_models/openai");
-const {
+import dotenv from "dotenv";
+import { ConversationChain } from "langchain/chains";
+import { ChatOpenAI } from "langchain/chat_models/openai";
+import {
   ChatPromptTemplate,
   HumanMessagePromptTemplate,
   SystemMessagePromptTemplate,
   MessagesPlaceholder,
-} = require("langchain/prompts");
-const { BufferMemory } = require("langchain/memory");
+} from "langchain/prompts";
+import { BufferMemory } from "langchain/memory";
+
+dotenv.config();
 
 const chat = new ChatOpenAI({
   modelName: "gpt-3.5-turbo",

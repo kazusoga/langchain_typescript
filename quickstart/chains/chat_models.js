@@ -1,12 +1,13 @@
-require("dotenv").config();
+import dotenv from "dotenv";
+dotenv.config();
 
-const { ChatOpenAI } = require("langchain/chat_models/openai");
-const { LLMChain } = require("langchain/chains");
-const {
+import { ChatOpenAI } from "langchain/chat_models/openai";
+import { LLMChain } from "langchain/chains";
+import {
   ChatPromptTemplate,
   SystemMessagePromptTemplate,
   HumanMessagePromptTemplate,
-} = require("langchain/prompts");
+} from "langchain/prompts";
 
 const template =
   "あなたは{input_language}を{output_language}に翻訳する親切なアシスタントです。";

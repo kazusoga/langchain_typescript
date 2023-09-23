@@ -1,5 +1,6 @@
-require("dotenv").config();
-const { OpenAI } = require("langchain/llms/openai");
+import dotenv from "dotenv";
+dotenv.config();
+import { OpenAI } from "langchain/llms/openai";
 
 const llm = new OpenAI({
   modelName: "gpt-3.5-turbo",
