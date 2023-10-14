@@ -43,6 +43,7 @@ Helpful Answer:`;
       // 以下追加？
       memory: new BufferMemory({
         memoryKey: "chat_history", // Must be set to "chat_history"
+        outputKey: "text", // Must be set to "output"
       }),
     }
   );
@@ -53,3 +54,5 @@ const chain = await initChain();
 const res = await chain.call({
   question: "2023年、五等分の花嫁の映画の公開日はいつですか？",
 });
+
+console.log(res);
