@@ -9,7 +9,7 @@
       "request": "launch",
       "name": "プログラムの起動",
       "skipFiles": ["<node_internals>/**"],
-      "program": "${workspaceFolder}/modules/chains/popular/conversational_retrieval_qa.js",
+      "program": "${workspaceFolder}/issue.js",
       "outFiles": ["${workspaceFolder}/**/*.js"]
     }
   ]

@@ -1,0 +1,17 @@
+/Users/kazusoga/node_work/langchain_typescript/node_modules/@pinecone-database/pinecone/dist/validator.js:206
+            throw new errors_1.PineconeArgumentError(msg);
+                  ^
+
+PineconeArgumentError: The argument to query accepts multiple types. Either 1) must have required properties: topK, id. There were also validation errors: argument must NOT have additional properties. 2) must have required properties: topK, vector. There were also validation errors: argument must NOT have additional properties.
+    at QueryCommand.validator (/Users/kazusoga/node_work/langchain_typescript/node_modules/@pinecone-database/pinecone/dist/validator.js:206:19)
+    at QueryCommand.<anonymous> (/Users/kazusoga/node_work/langchain_typescript/node_modules/@pinecone-database/pinecone/dist/data/query.js:76:30)
+    at step (/Users/kazusoga/node_work/langchain_typescript/node_modules/@pinecone-database/pinecone/dist/data/query.js:44:23)
+    at Object.next (/Users/kazusoga/node_work/langchain_typescript/node_modules/@pinecone-database/pinecone/dist/data/query.js:25:53)
+    at /Users/kazusoga/node_work/langchain_typescript/node_modules/@pinecone-database/pinecone/dist/data/query.js:19:71
+    at new Promise (<anonymous>)
+    at __awaiter (/Users/kazusoga/node_work/langchain_typescript/node_modules/@pinecone-database/pinecone/dist/data/query.js:15:12)
+    at QueryCommand.run (/Users/kazusoga/node_work/langchain_typescript/node_modules/@pinecone-database/pinecone/dist/data/query.js:71:16)
+    at Index.<anonymous> (/Users/kazusoga/node_work/langchain_typescript/node_modules/@pinecone-database/pinecone/dist/data/index.js:96:69)
+    at step (/Users/kazusoga/node_work/langchain_typescript/node_modules/@pinecone-database/pinecone/dist/data/index.js:33:23)
+
+Node.js v18.17.1
